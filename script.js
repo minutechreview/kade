@@ -55,3 +55,22 @@ if (motionQuery.matches) {
     motionQuery.addListener(onMotionChange);
   }
 }
+
+// The sticky bottom bar duplicates the hero's "Start Kade" button, so it stays
+// hidden until the hero actions have scrolled out of view.
+const dock = document.querySelector("[data-dock]");
+const heroActions = document.querySelector(".hero-actions");
+
+if (dock && heroActions) {
+  if ("IntersectionObserver" in window) {
+    const dockObserver = new IntersectionObserver(
+      ([entry]) => {
+        dock.hidden = entry.isIntersecting;
+      },
+      { rootMargin: "0px 0px -120px 0px" }
+    );
+    dockObserver.observe(heroActions);
+  } else {
+    dock.hidden = false;
+  }
+}
