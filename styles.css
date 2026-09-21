@@ -417,20 +417,19 @@ a:hover { color: var(--ink); }
 .tickets,
 .lang-row,
 .dont-buy,
-.price-points {
+.plans,
+.plan-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.who-cards,
-.price-points {
+.who-cards {
   display: grid;
   gap: var(--s-4);
 }
 
 .who-cards li,
-.price-points li,
 .lang-row li,
 .ticket {
   background: var(--foam);
@@ -439,25 +438,147 @@ a:hover { color: var(--ink); }
   box-shadow: var(--shadow-sm);
 }
 
-.who-cards li,
-.price-points li {
+.who-cards li {
   padding: var(--s-5);
 }
 
 .who-cards h3,
-.price-points h3,
 .ticket h3 {
   margin: 0 0 var(--s-2);
   font-size: 1.3rem;
 }
 
 .who-cards p,
-.price-points p,
 .ticket p {
   margin: 0;
   color: var(--ink-soft);
   font-size: 0.98rem;
 }
+
+/* ---------- Pricing plans ---------- */
+
+.plans {
+  display: grid;
+  gap: var(--s-4);
+  align-items: stretch;
+}
+
+.plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  padding: var(--s-6) var(--s-5);
+  background: var(--foam);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+/* The recommended plan is the one thing lifted off the row. */
+.plan-featured {
+  border-color: color-mix(in srgb, var(--clay) 48%, transparent);
+  box-shadow: var(--shadow);
+}
+
+.plan-badge {
+  position: absolute;
+  top: calc(var(--s-4) * -1);
+  left: var(--s-5);
+  margin: 0;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--clay-deep);
+  color: var(--foam);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.plan-top { display: grid; gap: var(--s-2); }
+
+.plan h3 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.plan-for {
+  margin: 0;
+  color: var(--ink-mute);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin: 0;
+  padding-bottom: var(--s-4);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.plan-amount {
+  font-family: var(--font-display);
+  font-size: 2.9rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* "Let's talk" is words, not a figure — it should not tower like one. */
+.plan-amount-quote { font-size: 2rem; }
+
+.plan-per {
+  color: var(--ink-mute);
+  font-size: 0.92rem;
+}
+
+.plan-list {
+  display: grid;
+  gap: var(--s-3);
+  font-size: 0.97rem;
+  color: var(--ink-soft);
+}
+
+.plan-list li {
+  display: grid;
+  grid-template-columns: 1.1rem 1fr;
+  gap: var(--s-3);
+  align-items: start;
+}
+
+.plan-list li::before {
+  content: "";
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.18em;
+  /* Tick drawn with a mask so it inherits the accent rather than shipping an image. */
+  background: var(--clay-deep);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.4l3 3 6-6.4' fill='none' stroke='%23000' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 1.1rem no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.4l3 3 6-6.4' fill='none' stroke='%23000' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 1.1rem no-repeat;
+}
+
+/* Pin every card's button to the bottom so the row of CTAs lines up. */
+.plan-cta {
+  margin-top: auto;
+  width: 100%;
+}
+
+.plan-note {
+  margin: var(--s-6) 0 0;
+  padding: var(--s-4) var(--s-5);
+  border: 1px dashed color-mix(in srgb, var(--ink) 24%, transparent);
+  border-radius: var(--radius);
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  max-width: 62ch;
+}
+
+.plan-note strong { color: var(--ink); }
 
 /* ---------- Surface cards ---------- */
 
@@ -737,7 +858,9 @@ a:hover { color: var(--ink); }
 
   .section-head .section-lede { padding-bottom: 4px; }
 
-  .price-points { grid-template-columns: repeat(3, 1fr); }
+  .plans { grid-template-columns: repeat(3, 1fr); }
+
+  .plan-for { min-height: calc(1.45em * 2); }
 
   .closer-card {
     grid-template-columns: 1.25fr 1fr;
