@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,650;1,9..144,500&family=Karla:ital,wght@0,400;0,500;0,700;1,400&family=Noto+Naskh+Arabic:wght@600&family=Noto+Sans+Sinhala:wght@600&family=Noto+Sans+Tamil:wght@600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Naskh+Arabic:wght@600&family=Noto+Sans+Sinhala:wght@600&family=Noto+Sans+Tamil:wght@600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
@@ -25,7 +25,7 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="awning" aria-hidden="true"></div>
+    <div class="topline" aria-hidden="true"></div>
 
     <header class="site-header">
       <div class="shell header-bar">
@@ -43,11 +43,11 @@
         </button>
         <nav id="site-nav" class="site-nav" aria-label="Page">
           <a href="#for">Who it’s for</a>
-          <a href="#surfaces">Surfaces</a>
+          <a href="#surfaces">What you get</a>
           <a href="#not-this">What you don’t buy</a>
           <a href="#languages">Languages</a>
           <a href="#pricing">Pricing</a>
-          <a class="btn btn-small" href="https://phase-8-auth.project-pos.pages.dev">Demo now</a>
+          <a class="btn btn-small" href="https://project-pos.pages.dev/login?register=1">Start Kade</a>
         </nav>
       </div>
     </header>
@@ -56,9 +56,7 @@
       <section class="hero" id="top">
         <div class="shell hero-grid">
           <div class="hero-copy" data-reveal data-stagger>
-            <p class="eyebrow eyebrow-name">
-              <span lang="si">කඩේ</span>
-            </p>
+            <p class="hero-script"><span lang="si">කඩේ</span></p>
             <h1>Kade</h1>
             <p class="one-liner">A phone-browser till for cafés that still run on paper.</p>
             <p class="lede">
@@ -66,15 +64,18 @@
               The till runs in the browser on a phone or iPad you already own.
             </p>
             <div class="hero-actions">
-              <a class="btn" href="https://phase-8-auth.project-pos.pages.dev">Demo now</a>
+              <div class="btn-row">
+                <a class="btn" href="https://project-pos.pages.dev/login?register=1">Start Kade</a>
+                <a class="btn btn-secondary" href="https://phase-8-auth.project-pos.pages.dev">Try the demo café</a>
+              </div>
               <p class="hero-note">
-                Harbour &amp; Bean, login-gated. Inside the app the chrome still says
-                Project POS — this page is Kade; the till has not been renamed yet.
+                The demo is Harbour &amp; Bean on staging — a real till, and you’ll need a
+                login. It is a demo shop, not a live paying café.
               </p>
             </div>
           </div>
 
-          <aside class="hero-stage" data-reveal>
+          <div class="hero-stage" data-reveal>
             <figure class="hero-photo">
               <img
                 src="./images/hero-cafe.png"
@@ -85,15 +86,16 @@
                 decoding="async"
               />
             </figure>
-          </aside>
+          </div>
         </div>
-      </section>
 
-      <section class="honesty" aria-label="What is real today">
-        <div class="shell honesty-row" data-reveal>
-          <p>
-            <strong>Real working POS on staging.</strong>
-            Not vaporware. Not a paid production café yet. No fake reviews, no customer counts.
+        <div class="shell" data-reveal>
+          <p class="honesty-row">
+            <span class="honesty-dot" aria-hidden="true"></span>
+            <span>
+              <strong>A real, working till on staging.</strong>
+              Not a mockup. Not a paying café yet. No invented reviews, no customer counts.
+            </span>
           </p>
         </div>
       </section>
@@ -101,11 +103,13 @@
       <section class="section" id="for">
         <div class="shell">
           <div class="section-head" data-reveal>
-            <p class="eyebrow">Who it’s for</p>
-            <h2>Shops that still run on paper.</h2>
+            <div>
+              <p class="eyebrow">Who it’s for</p>
+              <h2>Shops that still run on paper.</h2>
+            </div>
             <p class="section-lede">
               Independent coffee shops and small restaurants. Sri Lanka first, then the GCC.
-              One location. No IT team. A till you can actually use on a rush.
+              One location. No IT team. A till you can actually use in a rush.
             </p>
           </div>
           <ul class="who-cards" data-reveal data-stagger>
@@ -119,23 +123,25 @@
             </li>
             <li>
               <h3>Sri Lanka, then the GCC</h3>
-              <p>Receipts and menus in English, Sinhala, Tamil, and Arabic — not English-only ops.</p>
+              <p>Receipts and menus in English, Sinhala, Tamil, and Arabic — not an English-only system.</p>
             </li>
           </ul>
         </div>
       </section>
 
-      <section class="section section-tickets" id="surfaces">
+      <section class="section" id="surfaces">
         <div class="shell">
           <div class="section-head" data-reveal>
-            <p class="eyebrow">Four surfaces</p>
-            <h2>Till, kitchen, owner phone, and a plain-language day.</h2>
+            <div>
+              <p class="eyebrow">What you get</p>
+              <h2>Till, kitchen, owner phone, and a plain-language day.</h2>
+            </div>
             <p class="section-lede">
               One product. The kitchen display is optional. You do not buy four separate tools.
             </p>
           </div>
           <ol class="tickets" data-reveal data-stagger>
-            <li class="ticket ticket-a">
+            <li class="ticket">
               <div class="ticket-media">
                 <img
                   src="./images/surface-till.png"
@@ -155,7 +161,7 @@
                 </p>
               </div>
             </li>
-            <li class="ticket ticket-b">
+            <li class="ticket">
               <div class="ticket-media">
                 <img
                   src="./images/surface-kds.png"
@@ -175,7 +181,7 @@
                 </p>
               </div>
             </li>
-            <li class="ticket ticket-c">
+            <li class="ticket">
               <div class="ticket-media">
                 <img
                   src="./images/surface-reports.png"
@@ -195,8 +201,8 @@
                 </p>
               </div>
             </li>
-            <li class="ticket ticket-d ticket-ask">
-              <div class="ticket-media ticket-media-ask">
+            <li class="ticket">
+              <div class="ticket-media">
                 <img
                   src="./images/surface-ask.png"
                   alt="A phone with a question bubble next to a small receipt printer."
@@ -210,8 +216,8 @@
                 <span class="ticket-num">04</span>
                 <h3>Ask how the day went</h3>
                 <p>
-                  Plain-language answers from real till numbers. Ask how the day went — sales,
-                  stock, wastage, cash close — without learning a report screen.
+                  Plain answers from real till numbers. Ask how the day went — sales, stock,
+                  wastage, cash close — without learning a report screen.
                 </p>
               </div>
             </li>
@@ -222,22 +228,29 @@
       <section class="chalkboard" id="not-this">
         <div class="shell">
           <div class="section-head" data-reveal>
-            <p class="eyebrow eyebrow-chalk">What you don’t buy</p>
-            <h2>No card machine. No required printer. No Mac Mini.</h2>
+            <div>
+              <p class="eyebrow eyebrow-chalk">What you don’t buy</p>
+              <h2>No card machine. No required printer. No Mac mini.</h2>
+            </div>
+            <p class="section-lede">
+              The short list of things other tills make you pay for that Kade simply does not need.
+            </p>
           </div>
           <ul class="dont-buy" data-reveal data-stagger>
             <li>
-              <strong>Not payments processing.</strong>
-              Cash or card is a tag on the order. We do not take the payment.
+              <strong>Not payment processing.</strong>
+              <span>Cash or card is a tag on the order. We do not take the payment.</span>
             </li>
             <li>
-              <strong>Not a thermal printer requirement.</strong>
-              v1 receipts are print or PDF. Receipts can go to WhatsApp next — that is coming,
-              not shipping today.
+              <strong>Not a printer you have to buy.</strong>
+              <span>
+                Today receipts print or save as a PDF. Sending them on WhatsApp is next — that
+                is coming, not here yet.
+              </span>
             </li>
             <li>
-              <strong>Not a Mac Mini or proprietary hardware.</strong>
-              No local server, no branded till slab. Browser, on the device you have.
+              <strong>Not a Mac mini or special hardware.</strong>
+              <span>No server in the back room, no branded till. The browser, on the device you have.</span>
             </li>
           </ul>
         </div>
@@ -246,11 +259,13 @@
       <section class="section" id="languages">
         <div class="shell">
           <div class="section-head" data-reveal>
-            <p class="eyebrow">Receipts and menus</p>
-            <h2 class="langs-title">English, Sinhala, Tamil, Arabic.</h2>
+            <div>
+              <p class="eyebrow">Receipts and menus</p>
+              <h2>English, Sinhala, Tamil, Arabic.</h2>
+            </div>
             <p class="section-lede">
-              The customer-facing bit — receipts and menus — in the languages the shop actually
-              uses. That is the point. Not an English-only till with a flag icon.
+              The part your customers see — receipts and menus — in the languages the shop
+              actually uses. That is the point. Not an English-only till with a flag icon.
             </p>
           </div>
           <ul class="lang-row" data-reveal data-stagger>
@@ -274,41 +289,143 @@
         </div>
       </section>
 
-      <section class="section section-price" id="pricing">
-        <div class="shell price-card" data-reveal>
-          <p class="eyebrow">Pricing</p>
-          <h2>Setup fee, then a monthly managed service.</h2>
-          <p>
-            We quote after we see the shop. There is no public price on this page — on purpose.
-            The product is sold as a managed service, not a self-serve plan grid.
+      <section class="section" id="pricing">
+        <div class="shell">
+          <div class="section-head" data-reveal>
+            <div>
+              <p class="eyebrow">Pricing</p>
+              <h2>A plan per shop, not per terminal.</h2>
+            </div>
+            <p class="section-lede">
+              One monthly price for the whole shop — every device, every person on the
+              counter. Every plan starts with a one-time setup fee we quote after we see
+              the shop.
+            </p>
+          </div>
+
+          <ul class="plans" data-reveal data-stagger>
+            <li class="plan">
+              <div class="plan-top">
+                <h3>Counter</h3>
+                <p class="plan-for">A one-person counter that just needs to ring up orders.</p>
+              </div>
+              <p class="plan-price">
+                <span class="plan-amount">$9</span>
+                <span class="plan-per">per month</span>
+              </p>
+              <ul class="plan-list">
+                <li>The till, on any phone or iPad</li>
+                <li>Menus and receipts in all four languages</li>
+                <li>Receipts print or save as a PDF</li>
+                <li>Cash close at the end of the day</li>
+                <li>The day’s sales on your phone</li>
+              </ul>
+              <a class="btn btn-secondary plan-cta" href="https://project-pos.pages.dev/login?register=1">Start Kade</a>
+            </li>
+
+            <li class="plan plan-featured">
+              <p class="plan-badge">Most shops</p>
+              <div class="plan-top">
+                <h3>Shop</h3>
+                <p class="plan-for">A counter, a kitchen, and staff who work shifts.</p>
+              </div>
+              <p class="plan-price">
+                <span class="plan-amount">$29</span>
+                <span class="plan-per">per month</span>
+              </p>
+              <ul class="plan-list">
+                <li>Everything in Counter</li>
+                <li>The kitchen display</li>
+                <li>Staff PINs and tracked shifts</li>
+                <li>Stock and wastage</li>
+                <li>Full owner reports</li>
+                <li>Ask how the day went</li>
+              </ul>
+              <a class="btn plan-cta" href="https://project-pos.pages.dev/login?register=1">Start Kade</a>
+            </li>
+
+            <li class="plan">
+              <div class="plan-top">
+                <h3>Custom</h3>
+                <p class="plan-for">More than one shop, or a menu to move across.</p>
+              </div>
+              <p class="plan-price">
+                <span class="plan-amount plan-amount-quote">Let’s talk</span>
+                <span class="plan-per">quoted per shop</span>
+              </p>
+              <ul class="plan-list">
+                <li>Everything in Shop</li>
+                <li>More than one location</li>
+                <li>We move your menu across for you</li>
+                <li>Training at the shop</li>
+                <li>Someone to call first</li>
+              </ul>
+              <a class="btn btn-secondary plan-cta" href="#start">Request a quote</a>
+            </li>
+          </ul>
+
+          <p class="plan-note" data-reveal>
+            <strong>These prices are indicative while we pilot.</strong>
+            We confirm your price after we see the shop, before you commit to anything.
+            Nothing on this page takes a payment.
           </p>
-          <p>
-            Try the demo café first. It is Harbour &amp; Bean, login-gated, on staging.
-            A real till — not a clickable mock. Still not a live paid café.
-          </p>
-          <a class="btn" href="https://phase-8-auth.project-pos.pages.dev">Demo now</a>
+        </div>
+      </section>
+
+      <section class="closer" id="start">
+        <div class="shell closer-card" data-reveal>
+          <div class="closer-copy">
+            <p class="eyebrow eyebrow-chalk">Start Kade</p>
+            <h2>We set the shop up with you.</h2>
+            <p>
+              Create your owner account and we take it from there. Kade is still not
+              self-serve — there is no card to enter and nothing to pay for on this page.
+              The account is simply how we know a shop is waiting.
+            </p>
+            <p>
+              Tell us where the shop is, how many people work the counter, and what you use
+              today. We come back with what setting it up would look like, and with your
+              price, before you commit to anything.
+            </p>
+          </div>
+          <div class="closer-side">
+            <a class="btn btn-onchalk-solid" href="https://project-pos.pages.dev/login?register=1">
+              Create your account
+            </a>
+            <p class="closer-next">
+              <strong>No payment on the way in.</strong>
+              Creating the account does not charge you and does not start a trial clock.
+              We quote your setup fee after we have seen the shop.
+            </p>
+            <a class="btn btn-onchalk" href="https://phase-8-auth.project-pos.pages.dev">
+              Try the demo café
+            </a>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="shell footer-grid" data-reveal data-stagger>
-        <div>
+      <div class="shell footer-grid">
+        <div class="footer-brand-block">
           <p class="footer-brand">Kade</p>
-          <p class="footer-meaning"><span lang="si">කඩේ</span></p>
+          <p class="footer-meaning"><span lang="si">කඩේ</span> — shop</p>
         </div>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#for">Who it’s for</a>
+          <a href="#surfaces">What you get</a>
+          <a href="#pricing">Pricing</a>
+          <a href="https://phase-8-auth.project-pos.pages.dev">Harbour &amp; Bean demo</a>
+        </nav>
         <p class="footer-meta">
           A minutechbuilds product.<br />
           Sri Lanka + GCC.
         </p>
-        <p class="footer-meta">
-          <a href="https://phase-8-auth.project-pos.pages.dev">Harbour &amp; Bean demo</a>
-        </p>
       </div>
     </footer>
 
-    <div class="dock">
-      <a class="btn btn-dock" href="https://phase-8-auth.project-pos.pages.dev">Demo now</a>
+    <div class="dock" data-dock hidden>
+      <a class="btn btn-dock" href="https://project-pos.pages.dev/login?register=1">Start Kade</a>
     </div>
 
     <script src="./script.js"></script>

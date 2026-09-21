@@ -2,7 +2,7 @@
 
 This folder is the public marketing site for **Kade** (කඩේ, means shop).
 
-The POS, kitchen display, and owner dashboard still live in the rest of this repo (`project-pos`). This page does not change that app. Inside the staging till the chrome may still say Project POS; the public name on this page is Kade.
+The till, kitchen display, and owner dashboard live in the `project-pos` app. This page does not change that app. The app chrome now says Kade too, so the public name and the till match.
 
 ## Preview locally
 
