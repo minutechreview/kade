@@ -27,7 +27,9 @@ function revealAll() {
 
 const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-if (motionQuery.matches) {
+if (motionQuery.matches || !("IntersectionObserver" in window)) {
+  // Reduced motion, or a browser that cannot observe: show everything outright
+  // rather than leaving the page parked at opacity 0.
   revealAll();
 } else {
   const io = new IntersectionObserver(
@@ -38,7 +40,10 @@ if (motionQuery.matches) {
         io.unobserve(entry.target);
       }
     },
-    { threshold: 0.14, rootMargin: "0px 0px -7% 0px" }
+    // threshold 0 with the bottom edge pulled up: a section starts rising once
+    // it is genuinely on screen, and this cannot stall on a block taller than
+    // the viewport the way a ratio threshold can.
+    { threshold: 0, rootMargin: "0px 0px -12% 0px" }
   );
 
   revealNodes().forEach((el) => io.observe(el));
