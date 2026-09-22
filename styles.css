@@ -699,6 +699,12 @@ a:hover { color: var(--ink); }
   line-height: 1.35;
 }
 
+.lang-also {
+  margin: var(--s-4) 0 0;
+  color: var(--ink-mute);
+  font-size: 0.95rem;
+}
+
 .lang-name {
   font-size: 0.82rem;
   letter-spacing: 0.08em;
@@ -828,7 +834,7 @@ a:hover { color: var(--ink); }
 /* ---------- Responsive ---------- */
 
 @media (min-width: 620px) {
-  .lang-row { grid-template-columns: repeat(4, 1fr); }
+  .lang-row { grid-template-columns: repeat(3, 1fr); }
   .who-cards { grid-template-columns: repeat(3, 1fr); }
   .tickets { grid-template-columns: repeat(2, 1fr); }
 }
