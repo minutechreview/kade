@@ -1,0 +1,12 @@
+{
+  "name": "kade-marketing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "node --check script.js && node --check scripts/generate-previews.mjs && node --check scripts/build.mjs && node --check scripts/serve.mjs",
+    "test": "node --test scripts/site.test.mjs",
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/serve.mjs"
+  }
+}

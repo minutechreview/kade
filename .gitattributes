@@ -1,0 +1,3 @@
+*.woff2 binary
+# Keep the original supplied SIL font license bytes.
+brand/Manrope-OFL.txt whitespace=-blank-at-eol
