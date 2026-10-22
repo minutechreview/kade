@@ -5,6 +5,7 @@ const files = [
   'index.html',
   'styles.css',
   'script.js',
+  'slip.js',
   'favicon.svg',
   ...[
     'kade-lockup-horizontal-primary.svg',
@@ -14,6 +15,10 @@ const files = [
     'kade-symbol-white.svg',
     'manrope.woff2',
     'Manrope-OFL.txt',
+    'noto-sans-sinhala.woff2',
+    'noto-sans-sinhala-OFL.txt',
+    'noto-sans-tamil.woff2',
+    'noto-sans-tamil-OFL.txt',
   ].map((name) => `brand/${name}`),
   ...['overview', 'till', 'kitchen', 'reports', 'close'].map(
     (name) => `images/workspace-${name}.svg`

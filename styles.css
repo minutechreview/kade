@@ -6,6 +6,19 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Noto Sans Sinhala';
+  src: url('./brand/noto-sans-sinhala.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans Tamil';
+  src: url('./brand/noto-sans-tamil.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 :root {
   --paper: #fff7ea;
   --cream: #fff7ea;
@@ -942,5 +955,68 @@ p {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Slip, the Kade receipt mascot (slip.js). Decorative: each one plays its reaction once
+   when scrolled into view, and again when tapped. */
+.slip {
+  position: absolute;
+  z-index: 2;
+  aspect-ratio: 1;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.slip svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.hero-stage,
+.feature-media,
+.language-panel {
+  position: relative;
+}
+.slip-hero {
+  width: clamp(150px, 16vw, 214px);
+  left: -64px;
+  bottom: -46px;
+}
+.slip-card {
+  width: 172px;
+  right: 6px;
+  bottom: -6px;
+}
+.slip-lang {
+  width: 170px;
+  right: 18px;
+  top: -128px;
+}
+.closer-card {
+  position: relative;
+}
+.slip-closer {
+  width: 170px;
+  right: 48px;
+  top: -146px;
+}
+@media (max-width: 850px) {
+  .slip-hero {
+    width: 128px;
+    left: -6px;
+    bottom: -40px;
+  }
+  .slip-card {
+    width: 120px;
+  }
+  .slip-closer {
+    width: 130px;
+    right: 16px;
+    top: -110px;
+  }
+  .slip-lang {
+    width: 150px;
+    top: -112px;
+    right: 6px;
   }
 }
