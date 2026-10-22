@@ -61,10 +61,10 @@ var r = (t) => `
       <path d="M366 38 L392 50 L366 60 Z" fill="#fff" stroke="none"/><path d="M370 41 L392 50 L370 57" fill="none"/>
     </g>
     <g text-anchor="middle" fill="${e.ink}">
-      <text data-k="t0" x="310" y="54" font-family="Manrope, system-ui, sans-serif" font-weight="800" font-size="24">Hello!</text>
+      <text data-k="t0" x="310" y="54" font-family="'Kade Manrope', Manrope, system-ui, sans-serif" font-weight="800" font-size="24">Hello!</text>
       <text data-k="t1" x="310" y="54" font-family="'Noto Sans Sinhala', sans-serif" font-weight="700" font-size="14">ආයුබෝවන්!</text>
       <text data-k="t2" x="310" y="54" font-family="'Noto Sans Tamil', sans-serif" font-weight="700" font-size="15">வணக்கம்!</text>
-      <text data-k="t3" x="310" y="54" font-family="Manrope, system-ui, sans-serif" font-weight="800" font-size="24">On it!</text>
+      <text data-k="t3" x="310" y="54" font-family="'Kade Manrope', Manrope, system-ui, sans-serif" font-weight="800" font-size="24">On it!</text>
       <text data-k="t4" x="310" y="55" font-family="'Noto Sans Arabic', 'Geeza Pro', sans-serif" font-weight="700" font-size="21" direction="rtl">مرحبا!</text>
     </g>
   </g>`, s = `
@@ -99,14 +99,14 @@ var r = (t) => `
       <g data-k="stamp" opacity="0">
         <g transform="rotate(-12 200 238)">
           <rect data-k="stampBox" y="218" height="40" rx="8" fill="${e.paper}" fill-opacity=".85" stroke="${e.coral}" stroke-width="4"/>
-          <text data-k="stampText" x="200" y="247" text-anchor="middle" font-family="Manrope, system-ui, sans-serif" font-weight="800"
+          <text data-k="stampText" x="200" y="247" text-anchor="middle" font-family="'Kade Manrope', Manrope, system-ui, sans-serif" font-weight="800"
             font-size="24" letter-spacing="2" fill="${e.coral}">PAID</text>
         </g>
       </g>
       ${a}
       ${r("armL")}${r("armR")}
     </g>
-    <g data-k="zz" fill="${e.ink}" font-family="Manrope, system-ui, sans-serif" font-weight="800" opacity="0">
+    <g data-k="zz" fill="${e.ink}" font-family="'Kade Manrope', Manrope, system-ui, sans-serif" font-weight="800" opacity="0">
       <text font-size="14">z</text><text font-size="18">z</text><text font-size="22">Z</text>
     </g>
   </g>
@@ -1060,7 +1060,7 @@ function ce(n, r = {}) {
 		let i = G[e.reaction];
 		return e.a < i.ms ? i.apply(r, Math.max(0, e.a)) : r;
 	}
-	let f = (e) => u(d(e), e.idleT), p = matchMedia("(prefers-reduced-motion: reduce)"), m = 0, v = 0, y = 0, b = !0, x = 0, S = r.mood ?? "happy", C = S, w = X, T, D = 0, k = () => ({
+	let f = (e) => u(d(e), e.idleT), p = typeof matchMedia == "function" ? matchMedia("(prefers-reduced-motion: reduce)") : { matches: !0 }, m = 0, v = 0, y = 0, b = !0, x = 0, S = r.mood ?? "happy", C = S, w = X, T, D = 0, k = () => ({
 		idleT: m,
 		mood: S,
 		from: C,
@@ -1075,10 +1075,10 @@ function ce(n, r = {}) {
 	function M() {
 		!y && A() && (v = 0, y = requestAnimationFrame(j));
 	}
-	let N = new IntersectionObserver(([e]) => {
+	let N = typeof IntersectionObserver == "function" ? new IntersectionObserver(([e]) => {
 		b = e.isIntersecting, M();
-	});
-	return N.observe(n), document.addEventListener("visibilitychange", M), f(k()), M(), {
+	}) : null;
+	return N?.observe(n), document.addEventListener("visibilitychange", M), f(k()), M(), {
 		play(e) {
 			p.matches ? (f({
 				...k(),
@@ -1094,7 +1094,7 @@ function ce(n, r = {}) {
 		},
 		renderAt: f,
 		destroy() {
-			cancelAnimationFrame(y), N.disconnect(), document.removeEventListener("visibilitychange", M), clearTimeout(x), n.innerHTML = "";
+			cancelAnimationFrame(y), N?.disconnect(), document.removeEventListener("visibilitychange", M), clearTimeout(x), n.innerHTML = "";
 		}
 	};
 }
