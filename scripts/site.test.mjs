@@ -33,8 +33,9 @@ test('every local image, stylesheet, script, and anchor destination exists', asy
 });
 
 test('links use the production account entry and publish domain, not a stale demo branch', () => {
-  assert(html.includes('https://minutechreview.github.io/kade/'));
-  assert(html.includes('https://project-pos.pages.dev/login?register=1'));
+  assert(html.includes('https://kade.minutechbuilds.com/'));
+  assert(html.includes('https://kade.minutechbuilds.com/login?register=1'));
+  assert(!html.includes('project-pos.pages.dev'));
   assert(!html.includes('phase-8-auth'));
   assert(html.includes('illustrative café data'));
   assert.match(html, /not\s+automated\s+subscriptions/);
